@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 2.8)
+project(rename_csv)
+add_definitions("-std=c++11")
+ 
+if(WIN32)
+  include_directories(C:/local/include)
+  link_directories(C:/local/lib)
+else()
+  include_directories(/usr/local/include)
+  link_directories(/usr/local/lib)
+endif()
+ 
+set(TN1 "rename_csv") 
+add_executable(${TN1} src/${TN1}.cpp)
+target_link_libraries(${TN1} opencv_core opencv_highgui opencv_imgcodecs opencv_imgproc opencv_calib3d boost_system;boost_filesystem;)
